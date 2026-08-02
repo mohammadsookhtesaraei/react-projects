@@ -2,6 +2,8 @@
 .header {
 
 padding-inline: 1rem;
-padding-block: 0.5rem;
+padding-block: 1rem;
 border-bottom: 1px solid rgba(128, 128, 128, 0.295);
+display: flex;
+gap: 1rem;
 }
