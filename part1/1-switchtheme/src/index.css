@@ -1,4 +1,17 @@
+
+*,::before,::after {
+padding: 0;
+margin: 0;
+
+}
+
+/* تکنیک برعکس */
+
+/* فقط کد رنگ در حالت دارک و لایت عوض میشه نه اسم متغیرها */
 :root {
+
+  /* اگر کلاس لایت داشت کد رنگیشون اینا باشه */
+  &.light {
   --text: #6b6375;
   --text-h: #08060d;
   --bg: #fff;
@@ -11,15 +24,10 @@
   --shadow:
     rgba(0, 0, 0, 0.1) 0 10px 15px -3px, rgba(0, 0, 0, 0.05) 0 4px 6px -2px;
 
-  --sans: system-ui, 'Segoe UI', Roboto, sans-serif;
-  --heading: system-ui, 'Segoe UI', Roboto, sans-serif;
-  --mono: ui-monospace, Consolas, monospace;
+  }
 
-
-}
-
-@media (prefers-color-scheme: dark) {
-  :root {
+/* اگه کلاس دارک بود کد رنگیشون اینا باشه */
+  &.dark {
     --text: #9ca3af;
     --text-h: #f3f4f6;
     --bg: #16171d;
@@ -31,7 +39,14 @@
     --social-bg: rgba(47, 48, 58, 0.5);
     --shadow:
       rgba(0, 0, 0, 0.4) 0 10px 15px -3px, rgba(0, 0, 0, 0.25) 0 4px 6px -2px;
+
   }
+
 
 }
 
+html {
+background-color: var(--bg);
+color: var(--text);
+
+}
