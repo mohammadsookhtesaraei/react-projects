@@ -1,6 +1,11 @@
+import Layout from "./components/layout/Layout"
+import HomePage from "./pages/HomePage"
+
 const App = () => {
   return (
-    <div>App</div>
+    <Layout>
+      <HomePage/>
+    </Layout>
   )
 }
-export default App
+export default App;
