@@ -1,75 +1,61 @@
-# React + TypeScript + Vite
+# Contact Form App
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+A simple React application for managing contacts, built with a component-based architecture and React best practices.
 
-Currently, two official plugins are available:
+## Features
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Oxc](https://oxc.rs)
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/)
+* Add new contacts through a **Controlled Form**
+* Display contacts in a separate list component
+* Header and Footer implemented using **Component Composition**
+* Clean and maintainable component structure
+* State shared between sibling components using **Lifting State Up**
+* Single Responsibility Principle (SRP) applied to component design
+* Reusable UI components
+* Responsive and simple user interface
 
-## React Compiler
+## Project Structure
 
-The React Compiler is not enabled on this template because of its impact on dev & build performances. To add it, see [this documentation](https://react.dev/learn/react-compiler/installation).
+* **Layout**
 
-## Expanding the ESLint configuration
+  * `Header`
+  * `Footer`
+  * `Layout`
 
-If you are developing a production application, we recommend updating the configuration to enable type-aware lint rules:
+* **Pages**
 
-```js
-export default defineConfig([
-  globalIgnores(['dist']),
-  {
-    files: ['**/*.{ts,tsx}'],
-    extends: [
-      // Other configs...
+  * `Home`
 
-      // Remove tseslint.configs.recommended and replace with this
-      tseslint.configs.recommendedTypeChecked,
-      // Alternatively, use this for stricter rules
-      tseslint.configs.strictTypeChecked,
-      // Optionally, add this for stylistic rules
-      tseslint.configs.stylisticTypeChecked,
+* **Components**
 
-      // Other configs...
-    ],
-    languageOptions: {
-      parserOptions: {
-        project: ['./tsconfig.node.json', './tsconfig.app.json'],
-        tsconfigRootDir: import.meta.dirname,
-      },
-      // other options...
-    },
-  },
-])
+  * `ContactForm`
+  * `ContactList`
+  * Reusable UI components
 
-```
+## Architecture
 
-You can also install [eslint-plugin-react-x](https://github.com/Rel1cx/eslint-react/tree/main/packages/plugins/eslint-plugin-react-x) and [eslint-plugin-react-dom](https://github.com/Rel1cx/eslint-react/tree/main/packages/plugins/eslint-plugin-react-dom) for React-specific lint rules:
+The project follows React's recommended component architecture:
 
-```js
-// eslint.config.js
-import reactX from 'eslint-plugin-react-x'
-import reactDom from 'eslint-plugin-react-dom'
+* **Component Composition** is used to build the application's layout by composing the `Header`, `Footer`, and page content.
+* The **Home** component acts as the parent container and follows the **Single Responsibility Principle**, delegating each responsibility to dedicated child components.
+* A **Controlled Form** is implemented to manage all form inputs through React state.
+* **Lifting State Up** is used so the parent component owns the contacts state and passes data and callbacks to both the form and the contact list.
+* Components are designed to be reusable, independent, and easy to maintain.
 
-export default defineConfig([
-  globalIgnores(['dist']),
-  {
-    files: ['**/*.{ts,tsx}'],
-    extends: [
-      // Other configs...
-      // Enable lint rules for React
-      reactX.configs['recommended-typescript'],
-      // Enable lint rules for React DOM
-      reactDom.configs.recommended,
-    ],
-    languageOptions: {
-      parserOptions: {
-        project: ['./tsconfig.node.json', './tsconfig.app.json'],
-        tsconfigRootDir: import.meta.dirname,
-      },
-      // other options...
-    },
-  },
-])
+## Technologies
 
-```
+* React
+* TypeScript
+* Tailwind CSS
+
+## Learning Objectives
+
+This project focuses on practicing fundamental React concepts, including:
+
+* Controlled Components
+* Forms in React
+* Component Composition
+* Lifting State Up
+* Single Responsibility Principle (SRP)
+* State Management with `useState`
+* Props and Component Communication
+* Reusable Components
