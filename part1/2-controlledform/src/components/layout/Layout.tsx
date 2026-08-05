@@ -1,14 +1,22 @@
+
 import type { ReactNode } from "react"
+
+import Header from "@/components/layout/Header";
+import Footer from "@/components/layout/Footer";
+
 
 type LayoutProps={
     children:ReactNode
 };
 
-
 const Layout = ({children}:LayoutProps) => {
   return (
     <>
-    {children}
+    <Header/>
+    <main className="flex-1 container">
+      {children}
+    </main>
+    <Footer/>
     </>
   )
 }
