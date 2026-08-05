@@ -14,6 +14,7 @@ min-height: 100dvh;
 
     .container {
     margin: auto;
+    padding-inline: 0.5rem;
     }
 
 }

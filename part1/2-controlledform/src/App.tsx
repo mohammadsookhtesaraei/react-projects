@@ -1,8 +1,11 @@
 import Layout from "@/components/layout/Layout";
+import Form from "@/components/form/Form";
 
 const App = () => {
   return (
-    <Layout>App</Layout>
+    <Layout>
+      <Form/>
+    </Layout>
   )
 }
 export default App
