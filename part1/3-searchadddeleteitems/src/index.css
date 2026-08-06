@@ -1,18 +1,25 @@
 @import "tailwindcss";
 
 #root {
-display: flex;
-flex-direction: column;
-min-height: 100vh;
-min-height: 100dvh;
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
+  min-height: 100dvh;
 }
 
+@layer components {
+  .input {
+    @apply w-full max-w-sm rounded border border-gray-400/30 py-1 ps-2 text-gray-500 focus:border-blue-400/30 focus:shadow-md focus:shadow-blue-300 focus:outline-none;
+  }
+
+  .btn {
+    @apply cursor-pointer rounded bg-blue-500 px-4 text-white transition-transform duration-150 hover:scale-105 active:scale-95;
+  }
+}
 
 @layer utilities {
-
-    .container {
+  .container {
     margin: auto;
     padding-inline: 0.5rem;
-    }
-
+  }
 }
