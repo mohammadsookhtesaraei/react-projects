@@ -58,6 +58,7 @@ const Home = () => {
     setContact(newContact);
   };
 
+  // add localStorage
   useEffect(() => {
     localStorage.setItem("contacts", JSON.stringify(contact));
   }, [contact]);
