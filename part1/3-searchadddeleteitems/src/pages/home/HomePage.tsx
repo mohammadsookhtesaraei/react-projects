@@ -33,13 +33,34 @@ const HomePage = () => {
     setUser("");
   };
 
-  
 
+  const handlRemoveItemButtonClick=(id:number)=>{
+    const newItem=display.filter((item)=> item.id !== id);
+    setDisplay(newItem);
+  };
+   
+    const handlEditItemButtonClick=(id:number,edit:string)=>{
+     const items=[...display];
+
+     const newItem=items.map((item)=>{
+      if(item.id === id){
+        return {...item,username:edit}
+      };
+      return item
+
+     });
+
+
+     setDisplay(newItem);
+
+     
+
+  };
 
   return (
     <div>
      <AddItem user={user} onChaneUser={handleUserChangeInput} onAddItem={handleAddButtonClick}/>
-     <ListItems display={display}/>
+     <ListItems display={display} onRemove={handlRemoveItemButtonClick} onEditItem={handlEditItemButtonClick}/>
     </div>
   )
 }
