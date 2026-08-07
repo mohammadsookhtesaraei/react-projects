@@ -1,6 +1,7 @@
 import { useCallback, useState } from "react"
 import AddItem from "../../components/additem/AddItem"
 import ListItems from "../../components/listItems/ListItems"
+import { useLocalStorage } from "../../hooks/useLocalStorage";
 
 
 export type DisplayType={
@@ -11,7 +12,7 @@ export type DisplayType={
 const HomePage = () => {
   
   const [user,setUser]=useState("");
-  const [display,setDisplay]=useState<DisplayType[]>([])
+  const [display,setDisplay]=useLocalStorage<DisplayType[]>("display",[]);
  
 
 
