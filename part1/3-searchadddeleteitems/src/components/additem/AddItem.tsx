@@ -6,7 +6,7 @@ type AddItemProps={
 }
 
 const AddItem = ({user,onChaneUser,onAddItem}:AddItemProps) => {
-  console.log("add item render");
+
     const changeHandler=(event:React.ChangeEvent<HTMLInputElement>)=>{
         onChaneUser(event)
     };

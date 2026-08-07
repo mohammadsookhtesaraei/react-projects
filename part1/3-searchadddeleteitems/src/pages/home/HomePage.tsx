@@ -9,10 +9,10 @@ export type DisplayType={
 };
 
 const HomePage = () => {
-    console.log("homerender");
+  
   const [user,setUser]=useState("");
   const [display,setDisplay]=useState<DisplayType[]>([])
-  console.log(display); 
+ 
 
 
 
