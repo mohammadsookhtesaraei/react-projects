@@ -1,0 +1,21 @@
+.list {
+  display: flex;
+  gap: 5px;
+}
+
+.items {
+  flex: 1;
+}
+
+.fav {
+  padding: 8px;
+  max-width: 250px;
+  width: 100%;
+}
+
+.fav p {
+  color: gray;
+  font-size: 1rem;
+  text-align: center;
+  text-transform: capitalize;
+}

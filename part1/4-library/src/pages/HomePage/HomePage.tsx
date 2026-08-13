@@ -12,6 +12,7 @@ const HomePage = (): ReactNode => {
   console.log("home render");
   const [search, setSearch] = useState<string>("");
   const [display, setDisplay] = useState<BookType[]>(books);
+  
 
   const handleSearchChangeInput = (
     event: React.ChangeEvent<HTMLInputElement>,

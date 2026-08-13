@@ -1,0 +1,41 @@
+.book {
+display: flex;
+align-items: center;
+border: 1px solid rgb(243, 238, 238);
+margin-bottom: 5px;
+padding: 8px;
+border-radius: 6px;
+background-color: aliceblue;
+box-shadow: 1px 1px 1px rgb(243, 238, 238);
+
+
+}
+
+.content {
+flex: 1;
+padding: 10px;
+display: flex;
+flex-direction: column;
+gap: 10px;
+
+}
+
+.action {
+ align-self: self-start;
+}
+
+
+.action button {
+all:unset;
+cursor: pointer;
+transition: all 0.3s;
+}
+
+
+.action button:hover {
+  transform: scale(1.04);
+}
+
+.action button:active {
+  transform: scale(0.9);
+}
