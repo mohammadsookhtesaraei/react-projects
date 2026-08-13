@@ -1,26 +1,34 @@
 import { useState, useEffect, type ReactNode } from "react";
 
+// styles
 import styles from "./HomePage.module.css";
 
-import { type BookType } from "../../types/books-interface";
-
-import SearchBox from "../../components/SearchBox/SearchBox";
-import List from "../../components/List/List";
+// api function
 import { getAllbooks } from "../../services/bookServices";
 import { updateBooks } from "../../services/bookServices";
 
+// type import
+import { type BookType } from "../../types/books-interface";
+
+// components
+import SearchBox from "../../components/SearchBox/SearchBox";
+import List from "../../components/List/List";
+
+
 const HomePage = (): ReactNode => {
 
+  // state -serach
   const [search, setSearch] = useState<string>("");
 
+  // state data and display
   const [data,setData]=useState<BookType[]>([]);
   const [display, setDisplay] = useState<BookType[]>([]);
   
-
+// liked -state -favorite book arr
   const [liked, setLiked] = useState<BookType[]>([]);
 
 
-
+// use Effect-show data in first mount
   useEffect(() => {
     const getData = async () => {
       const books=await getAllbooks()
@@ -40,9 +48,32 @@ const HomePage = (): ReactNode => {
 
     getData();
   }, []);
+  
+
+// search-handler -onChange as callback fn
+   const handleSearchChangeInput = (
+    event: React.ChangeEvent<HTMLInputElement>,
+  ): void => {
+    setSearch(event.target.value);
+  };
+
+
+  // handle btn -search
+  const handleSearchButtonClick = (): void => {
+    if (!search) {
+      setDisplay(data);
+      return;
+    }
+
+    const newBooks = data.filter((item) =>
+      item.title.toLowerCase().includes(search.toLowerCase()),
+    );
+    setDisplay(newBooks);
+  };
 
 
 
+  // handle liked array
     const handleLikeBookButtonClick = async (
     like: boolean,
     data: BookType,
@@ -59,24 +90,7 @@ const HomePage = (): ReactNode => {
     }
   };
 
-  const handleSearchChangeInput = (
-    event: React.ChangeEvent<HTMLInputElement>,
-  ): void => {
-    setSearch(event.target.value);
-  };
-
-  const handleSearchButtonClick = (): void => {
-    if (!search) {
-      setDisplay(data);
-      return;
-    }
-
-    const newBooks = data.filter((item) =>
-      item.title.toLowerCase().includes(search.toLowerCase()),
-    );
-    setDisplay(newBooks);
-  };
-
+ 
   return (
     <div className={styles.home}>
       <SearchBox

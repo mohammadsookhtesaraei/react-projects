@@ -1,75 +1,203 @@
-# React + TypeScript + Vite
+# 📚 Book Library
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+A React-based book library application where users can search for books, like them, and manage their favorite books.
 
-Currently, two official plugins are available:
+The project uses **JSON Server** as a mock backend and **Axios** for API communication.
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Oxc](https://oxc.rs)
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/)
+## Features
 
-## React Compiler
+- Search books by title
+- Like and unlike books
+- Add books to favorites
+- Remove books from favorites
+- Display books using list rendering
+- Conditional rendering for the favorite books list
+- Persist like status using JSON Server
+- Fetch and update data using Axios
+- Lifted state between parent and child components
+- Callback functions for child-to-parent communication
+- React `useState` and `useEffect`
 
-The React Compiler is not enabled on this template because of its impact on dev & build performances. To add it, see [this documentation](https://react.dev/learn/react-compiler/installation).
+## Concepts Practiced
 
-## Expanding the ESLint configuration
+### Component-Based Architecture
 
-If you are developing a production application, we recommend updating the configuration to enable type-aware lint rules:
+The application is divided into reusable components such as:
 
-```js
-export default defineConfig([
-  globalIgnores(['dist']),
-  {
-    files: ['**/*.{ts,tsx}'],
-    extends: [
-      // Other configs...
+- `HomePage`
+- `SearchBox`
+- `List`
+- `BookItem`
+- `FavoriteBooks`
 
-      // Remove tseslint.configs.recommended and replace with this
-      tseslint.configs.recommendedTypeChecked,
-      // Alternatively, use this for stricter rules
-      tseslint.configs.strictTypeChecked,
-      // Optionally, add this for stylistic rules
-      tseslint.configs.stylisticTypeChecked,
+### Props
 
-      // Other configs...
-    ],
-    languageOptions: {
-      parserOptions: {
-        project: ['./tsconfig.node.json', './tsconfig.app.json'],
-        tsconfigRootDir: import.meta.dirname,
-      },
-      // other options...
-    },
-  },
-])
+Props are used to pass data and callback functions between components.
 
-```
+Example:
 
-You can also install [eslint-plugin-react-x](https://github.com/Rel1cx/eslint-react/tree/main/packages/plugins/eslint-plugin-react-x) and [eslint-plugin-react-dom](https://github.com/Rel1cx/eslint-react/tree/main/packages/plugins/eslint-plugin-react-dom) for React-specific lint rules:
+    <BookItem
+      data={data}
+      onLike={handleLikeBookButtonClick}
+    />
 
-```js
-// eslint.config.js
-import reactX from 'eslint-plugin-react-x'
-import reactDom from 'eslint-plugin-react-dom'
+### State Management
 
-export default defineConfig([
-  globalIgnores(['dist']),
-  {
-    files: ['**/*.{ts,tsx}'],
-    extends: [
-      // Other configs...
-      // Enable lint rules for React
-      reactX.configs['recommended-typescript'],
-      // Enable lint rules for React DOM
-      reactDom.configs.recommended,
-    ],
-    languageOptions: {
-      parserOptions: {
-        project: ['./tsconfig.node.json', './tsconfig.app.json'],
-        tsconfigRootDir: import.meta.dirname,
-      },
-      // other options...
-    },
-  },
-])
+React `useState` is used to manage:
 
-```
+- Search input
+- Book data
+- Displayed books
+- Favorite books
+
+### Lifting State Up
+
+The favorite books state is maintained in the parent component and passed down to child components.
+
+This allows the parent component to control the shared state between the book list and favorite books.
+
+### Callback Functions
+
+Callback functions are passed from parent components to child components so that child components can notify the parent about user actions.
+
+Example:
+
+    <BookItem
+      data={data}
+      onLike={handleLikeBookButtonClick}
+    />
+
+### List Rendering
+
+Books and favorite books are dynamically rendered using the `map()` method.
+
+Example:
+
+    display.map((item) => (
+      <BookItem
+        key={item.id}
+        data={item}
+      />
+    ))
+
+### Conditional Rendering
+
+Conditional rendering is used to display different UI states.
+
+For example, when there are no favorite books:
+
+    liked.length === 0
+      ? <p>Empty list</p>
+      : <FavoriteBooks liked={liked} />
+
+### useEffect
+
+`useEffect` is used for side effects such as fetching book data from the API.
+
+Example:
+
+    useEffect(() => {
+      getData();
+    }, []);
+
+## API and Backend
+
+The project uses **JSON Server** as a mock REST API.
+
+### Endpoints
+
+    GET    /books
+    GET    /books/:id
+    PATCH  /books/:id
+
+The `like` property of each book is updated through the API.
+
+Example:
+
+    PATCH /books/2
+
+    {
+      "like": true
+    }
+
+## Axios
+
+Axios is used to communicate with the JSON Server API.
+
+API-related logic is separated into service functions instead of being directly implemented inside UI components.
+
+Example:
+
+    const getAllBooks = async () => {
+      const response = await axios.get("/books");
+      return response.data;
+    };
+
+## Project Structure
+
+    src/
+    ├── components/
+    │   ├── BookItem/
+    │   ├── FavoriteBooks/
+    │   ├── List/
+    │   └── SearchBox/
+    │
+    ├── pages/
+    │   └── HomePage/
+    │
+    ├── services/
+    │   └── bookServices.ts
+    │
+    ├── types/
+    │   └── books-interface.ts
+    │
+    └── ...
+
+## User Flow
+
+    User
+      ↓
+    Search for a book
+      ↓
+    Book List
+      ↓
+    Like / Unlike
+      ↓
+    Callback Function
+      ↓
+    Parent State Update
+      ↓
+    Axios Request
+      ↓
+    JSON Server
+      ↓
+    Updated Book Data
+
+## Technologies
+
+- React
+- TypeScript
+- Axios
+- JSON Server
+- CSS Modules
+- React Icons
+
+## Learning Goals
+
+This project was built to practice fundamental React concepts, including:
+
+- Components
+- Props
+- State
+- Lifting State Up
+- Callback Functions
+- Controlled Components
+- List Rendering
+- Conditional Rendering
+- `useState`
+- `useEffect`
+- Axios
+- JSON Server
+- TypeScript
+- API Communication
+- Component Composition

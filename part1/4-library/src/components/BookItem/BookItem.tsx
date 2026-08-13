@@ -1,9 +1,11 @@
-import { useEffect, useState, type ReactNode } from "react"
+import { useState, type ReactNode } from "react"
 
 import styles from "./BookItem.module.css"
-import { type BookType } from "../../types/books-interface";
 
 import { FaHeart } from "react-icons/fa";
+
+import { type BookType } from "../../types/books-interface";
+
 
 type Props={
   data:BookType,
@@ -13,7 +15,7 @@ type Props={
 const BookItem = ({data,onLike}:Props):ReactNode => {
 
   const {image,author,language,title,country,year,id,like}=data;
-//  since my mockData is constant - like in first mount does not work for persist data if we change liked state
+// lazy init for liked state from data base im first mount
   const [liked,setLiked]=useState<boolean>(like);
 
 

@@ -23,7 +23,7 @@
       "pages": 784,
       "title": "Fairy tales",
       "year": 1836,
-      "like": true,
+      "like": false,
       "true": ""
     },
     {
@@ -36,7 +36,7 @@
       "pages": 928,
       "title": "The Divine Comedy",
       "year": 1315,
-      "like": true
+      "like": false
     },
     {
       "id": "4",

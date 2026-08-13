@@ -11,6 +11,14 @@ box-shadow: 1px 1px 1px rgb(243, 238, 238);
 
 }
 
+
+.book img {
+width: 80px;
+height: auto;
+display: block;
+
+}
+
 .content {
 flex: 1;
 padding: 10px;
