@@ -1,0 +1,16 @@
+.container {
+}
+
+.container > h2 {
+  font-size: 0.95rem;
+  text-align: center;
+  color: blue;
+  margin-bottom: 6px;
+}
+
+.card {
+  border: 1px solid gray;
+  padding: 8px;
+  border-radius: 8px;
+  margin-bottom: 8px;
+}
