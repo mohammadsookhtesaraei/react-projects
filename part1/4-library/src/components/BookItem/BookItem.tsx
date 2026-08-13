@@ -1,7 +1,7 @@
-import { useState, type ReactNode } from "react"
+import { useEffect, useState, type ReactNode } from "react"
 
 import styles from "./BookItem.module.css"
-import { type BookType } from "../../constants/mockData";
+import { type BookType } from "../../types/books-interface";
 
 import { FaHeart } from "react-icons/fa";
 
@@ -12,14 +12,23 @@ type Props={
 
 const BookItem = ({data,onLike}:Props):ReactNode => {
 
-  const {image,author,language,title,country,year,id}=data;
+  const {image,author,language,title,country,year,id,like}=data;
+//  since my mockData is constant - like in first mount does not work for persist data if we change liked state
+  const [liked,setLiked]=useState<boolean>(like);
 
-  const [like,setLike]=useState(false);
 
   const handleLikeButtonClick=()=>{
-    setLike((prev)=> !prev);
-    onLike(like,data,id);
-  }
+
+   const newLiked=!liked;
+
+    setLiked(newLiked);
+    onLike(newLiked,data,id);
+  };
+
+
+
+
+
  
   return (
     <div className={styles.book}>
@@ -34,7 +43,7 @@ const BookItem = ({data,onLike}:Props):ReactNode => {
       </div>
       <div className={styles.action}>
        <button onClick={handleLikeButtonClick}>
-        <FaHeart color={like ? "red" : "black"}/>
+        <FaHeart color={liked ? "red" : "gray"}/>
        </button>
       </div>
     </div>

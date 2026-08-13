@@ -1,18 +1,63 @@
-import { useState, type ReactNode } from "react";
+import { useState, useEffect, type ReactNode } from "react";
 
 import styles from "./HomePage.module.css";
 
-import { books } from "../../constants/mockData";
-import { type BookType } from "../../constants/mockData";
+import { type BookType } from "../../types/books-interface";
 
 import SearchBox from "../../components/SearchBox/SearchBox";
 import List from "../../components/List/List";
+import { getAllbooks } from "../../services/bookServices";
+import { updateBooks } from "../../services/bookServices";
 
 const HomePage = (): ReactNode => {
-  console.log("home render");
+
   const [search, setSearch] = useState<string>("");
-  const [display, setDisplay] = useState<BookType[]>(books);
+
+  const [data,setData]=useState<BookType[]>([]);
+  const [display, setDisplay] = useState<BookType[]>([]);
   
+
+  const [liked, setLiked] = useState<BookType[]>([]);
+
+
+
+  useEffect(() => {
+    const getData = async () => {
+      const books=await getAllbooks()
+      try {
+      // @ts-ignore
+        setData(books);
+      // @ts-ignore
+
+        setDisplay(books);
+
+      // @ts-ignore
+        setLiked(books.filter((book)=>book.like))
+      } catch (error) {
+        console.log(error);
+      }
+    };
+
+    getData();
+  }, []);
+
+
+
+    const handleLikeBookButtonClick = async (
+    like: boolean,
+    data: BookType,
+    id: string,
+  ) => {
+    if (like) {
+      const newData = { ...data, like: like };
+      setLiked((prev) => [...prev, newData]);
+      await updateBooks(id, newData);
+    } else {
+      setLiked((prev) => prev.filter((item) => item.id !== id));
+      const newData = { ...data, like: false };
+      await updateBooks(id, newData);
+    }
+  };
 
   const handleSearchChangeInput = (
     event: React.ChangeEvent<HTMLInputElement>,
@@ -22,11 +67,11 @@ const HomePage = (): ReactNode => {
 
   const handleSearchButtonClick = (): void => {
     if (!search) {
-      setDisplay(books);
+      setDisplay(data);
       return;
     }
 
-    const newBooks = display.filter((item) =>
+    const newBooks = data.filter((item) =>
       item.title.toLowerCase().includes(search.toLowerCase()),
     );
     setDisplay(newBooks);
@@ -39,7 +84,11 @@ const HomePage = (): ReactNode => {
         onSearchChange={handleSearchChangeInput}
         onSearchClick={handleSearchButtonClick}
       />
-      <List display={display} />
+      <List
+        display={display}
+        liked={liked}
+        onLiked={handleLikeBookButtonClick}
+      />
     </div>
   );
 };
