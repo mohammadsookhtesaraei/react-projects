@@ -1,1 +1,11 @@
 @import "tailwindcss";
+
+@layer base {
+
+    html {
+    
+    caret-color: rgb(66, 66, 226);
+    
+    }
+
+}

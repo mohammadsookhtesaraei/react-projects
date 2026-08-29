@@ -12,7 +12,6 @@ const HomePage = (): ReactNode => {
 
   return (
     <div className="">
-      <button>open</button>
       <CreateListItem  value={title} onChange={handleChangeTitle} />
     </div>
   );
