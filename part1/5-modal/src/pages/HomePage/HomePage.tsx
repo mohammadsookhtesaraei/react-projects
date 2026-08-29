@@ -1,10 +1,21 @@
-import type { ReactNode } from "react"
+import { useState, type ChangeEvent, type ReactNode } from "react";
+import CreateListItem from "../../components/CreateListItem/CreateListItem";
 
+const HomePage = (): ReactNode => {
+  const [title, setTitle] = useState<string>("");
+  const [lists, setList] = useState<{ id: string; title: string }[]>([]);
 
- const HomePage = ():ReactNode => {
+  const handleChangeTitle = (e: ChangeEvent<HTMLInputElement>):void => {
+    const value = e.target.value;
+    setTitle(value);
+  };
+
   return (
-    <div className="">Hello from HomePage</div>
+    <div className="">
+      <button>open</button>
+      <CreateListItem  value={title} onChange={handleChangeTitle} />
+    </div>
   );
-}
+};
 
 export default HomePage;
