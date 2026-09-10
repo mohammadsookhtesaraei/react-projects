@@ -1,0 +1,50 @@
+@import "tailwindcss";
+
+
+@layer base {
+
+   html {
+   
+      &.light {
+      background-color: oklch(98.4% 0.003 247.858);
+      
+      }
+
+      &.dark {
+         background-color: oklch(27.8% 0.033 256.848);
+         color: white
+      }
+   
+   }
+
+}
+
+@layer components {
+
+    .card {
+    @apply border bg-white  border-gray-200 shadow-2xs rounded-md overflow-hidden;
+    }
+
+    .blue {
+        @apply bg-blue-500
+    }
+
+    .rose {
+       @apply bg-rose-500
+    }
+
+    .yellow {
+       @apply bg-yellow-500
+    }
+
+    .green {
+       @apply bg-green-500
+    
+    }
+
+    .btn {
+   
+   @apply  text-white px-4 py-1 rounded hover:scale-105 active:scale-90 transition-transform duration-150 cursor-pointer capitalize
+   }
+
+}
