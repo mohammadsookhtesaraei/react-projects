@@ -41,8 +41,8 @@ const Header = (): ReactNode => {
               className={({ isActive }) =>
                 clsx(
                   isActive
-                    ? "text-blue-400 pb-1 border-b"
-                    : "text-gray-400 pb-1 border-b border-b-transparent",
+                    ? "text-blue-400 pb-1 border-b transition-colors duration-75"
+                    : "text-gray-400 pb-1 border-b border-b-transparent ",
                 )
               }
             >
