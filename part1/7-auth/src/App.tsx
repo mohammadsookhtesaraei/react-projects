@@ -1,8 +1,11 @@
 import type { ReactNode } from "react"
+import MyRoutes from "./router/MyRoutes"
 
 const App = ():ReactNode => {
   return (
-    <div>App</div>
+    <>
+    <MyRoutes/>
+    </>
   )
 }
 export default App
