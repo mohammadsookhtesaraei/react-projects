@@ -1,11 +1,10 @@
 import type { ReactNode } from "react"
+import Auth from "../../components/auth/Auth";
 
-type AuthPageProps={};
 
- const AuthPage = ({}:AuthPageProps):ReactNode => {
-  return (
-    <div className="">Hello from AuthPage</div>
-  );
+
+ const AuthPage = ():ReactNode => {
+  return <Auth/>
 }
 
 export default AuthPage;
