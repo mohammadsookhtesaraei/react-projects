@@ -13,8 +13,8 @@ export const setCookie = (token: Token) => {
     // گاربر کد یکبار مصرف وارد کرد
     // بکند اند بما اکسس توکن و رفرش توکن میده
     // ما این تابع رو داخل فرم هندلرش کال میکنیم و دیتارو بهش پاس میدیم و توی کوکی ست می کنیم
-    document.cookie = `accessToken=${token.accessToken}; max-age=86400; path=/`
-    document.cookie = `refreshToken=${token.refreshToken}; max-age=${30 * 24 * 60 * 60} path=/`
+    document.cookie = `accessToken=${token.accessToken}; max-age=86400; path=/`;
+    document.cookie = `refreshToken=${token.refreshToken}; max-age=${30 * 24 * 60 * 60}; path=/`;
 };
 
 // این تابع کجا صدا زده میشه
