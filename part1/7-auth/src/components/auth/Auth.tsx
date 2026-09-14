@@ -27,9 +27,11 @@ const Auth = () => {
  try{
  const {message}=await getOtpMobile(mobile) as {message:string};
  toast.success(message)
-
+ setStep(2);
  }catch(error:unknown){
-
+ error instanceof Error ? 
+ toast.error(error.message)
+ :toast.error("unknown error")
  }
 
 
