@@ -1,1 +1,17 @@
 @import "tailwindcss";
+
+@layer base {
+  html {
+    caret-color: rgb(80, 80, 255);
+  }
+}
+
+@layer components {
+  .text_input {
+    @apply border w-full rounded-md border-gray-200 px-1 py-1 focus:outline-none focus:shadow-2xs focus:shadow-gray-200 transition-shadow duration-75;
+  }
+
+  .btn {
+    @apply px-2 py-0.5 rounded-md bg-blue-500 grid cursor-pointer  text-white my-3 text-sm hover:bg-blue-700;
+  }
+}

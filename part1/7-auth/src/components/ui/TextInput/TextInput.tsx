@@ -10,7 +10,7 @@ type TextInputProps=ComponentProps<"input"> & {
   return (
     <div className="">
       <label className="block my-1" htmlFor={id}>{label}</label>
-      <input className="border border-gray-200 px-1 py-1 focus:outline-none focus:shadow-2xs focus:shadow-gray-200 transition-shadow duration-75" {...otherProps} />
+      <input  className="text_input" id={id} {...otherProps} autoComplete="off" />
     </div>
   );
 }

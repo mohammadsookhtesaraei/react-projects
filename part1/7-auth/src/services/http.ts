@@ -1,5 +1,10 @@
 import axios from "axios";
 
+import type { IAxios } from "../types/axios-interface";
+
+
+
+
 
 const app = axios.create({
     baseURL: "http://localhost:3400/",
@@ -34,4 +39,4 @@ const http = {
 };
 
 
-export default http;
+export default http as IAxios;
