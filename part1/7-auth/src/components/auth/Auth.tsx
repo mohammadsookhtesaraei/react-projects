@@ -5,8 +5,10 @@ import { getCheckOtpMobile, getOtpMobile } from "../../services/authServices";
 import toast from "react-hot-toast";
 import { useNavigate } from "react-router-dom";
 import { setCookie } from "../../utils/cookie";
+import { useProfile } from "../../hooks/useProfile";
 
 const Auth = () => {
+ const {refetch}=useProfile();
 
   const navigate=useNavigate();
   // step state
@@ -62,11 +64,15 @@ const Auth = () => {
 
  try{
  const data=await getCheckOtpMobile(mobile,code);
-setCookie(data)
+if(data){
+setCookie(data);
+refetch();
 toast.success(data.message)
 setMobile("");
 setCode("");
-navigate("/",{replace:true})
+// navigate("/",{replace:true})
+ }
+
 
  }catch(error:unknown){
  error instanceof Error ? 
