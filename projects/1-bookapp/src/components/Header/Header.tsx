@@ -4,7 +4,7 @@ type HeaderProps={};
 
  const Header = ({}:HeaderProps):ReactNode => {
   return (
-    <div className="">Hello from Header</div>
+    <div className="">سلام</div>
   );
 }
 
