@@ -8,7 +8,7 @@
     "build": "tsc -b && vite build",
     "lint": "eslint .",
     "preview": "vite preview",
-    "json":"json-server --watch ./src/database/db.json --port 2500"
+    "json": "json-server --watch ./src/database/db.json --port 2500"
   },
   "dependencies": {
     "@tailwindcss/postcss": "^4.3.3",
@@ -17,6 +17,8 @@
     "postcss": "^8.5.28",
     "react": "^19.2.8",
     "react-dom": "^19.2.8",
+    "react-icons": "^5.7.0",
+    "react-router-dom": "^7.18.4",
     "tailwindcss": "^4.3.3"
   },
   "devDependencies": {
