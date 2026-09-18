@@ -14,18 +14,23 @@ import { FaTimes } from "react-icons/fa";
   const [isCartOpen,setIsCartOpen]=useState(false);
   const [isMobileOpen,setIsMobileOpen]=useState(false);
 
-  console.log(isCartOpen);
+ 
 
  const handleBackDrop=():void=>{
   setIsCartOpen(false);
-  setIsMobileOpen(false)
+  setIsMobileOpen(false);
  };
 
 // just for-right side dive 
- const handleToggelSide=():void=>{
+const openCart = () => {
+  setIsMobileOpen(false);
   setIsCartOpen(true);
-  setIsMobileOpen(false)
- }
+};
+
+const openMobileMenu = () => {
+  setIsCartOpen(false);
+  setIsMobileOpen(true);
+};
 
   return (
     <>
@@ -50,12 +55,12 @@ import { FaTimes } from "react-icons/fa";
         <Link to="/contact" className="hover:text-rose-600">تماس با ما</Link>
 
             {/* cart*/}
-          <button className="relative flex">
+          <Link to="/cart" className="relative flex">
               <FaShoppingCart className="text-2xl hover:text-rose-700"/>
             <span className="absolute -top-5 right-2 bg-rose-700 text-white text-sm rounded-full  size-6 grid place-content-center">
             0
             </span>
-          </button>
+          </Link>
       </div>
   
       {/* hamburger-menu  z-index-40*/}
@@ -74,8 +79,8 @@ import { FaTimes } from "react-icons/fa";
    
     </div>}
 
-    {/* menu for mobile-open from -right-side z-index-50*/}
-    <div className={`fixed top-0 right-0 h-full w-80 ${isMobileOpen ? "translate-x-0" :"translate-x-full"}  bg-white shadow-lg transform transition-transform duration-300  z-50`}>
+    {/* menu for mobile-open from-right-side z-index-50*/}
+    <div className={`fixed top-0 right-0 h-full w-80 ${isMobileOpen ? "translate-x-0" :"translate-x-full pointer-events-none"}  bg-white shadow-lg transform transition-transform duration-300  z-50 `}>
      <div>
        {/* header */}
       <div className="flex justify-between items-center border-b p-4 border-b-gray-300">
@@ -92,8 +97,8 @@ import { FaTimes } from "react-icons/fa";
         <Link to="/contact" className="hover:text-rose-600 text-[#333] border-b border-b-gray-200 px-4 pt-7  block">تماس با ما</Link>
 
             {/* cart*/}
-          <button className="relative flex  mt-7 mx-4 self-end">
-              <FaShoppingCart onClick={handleToggelSide} className="text-2xl hover:text-rose-700 cursor-pointer"/>
+          <button onClick={openCart} className="relative flex  mt-7 mx-4 cursor-pointer self-end">
+              <FaShoppingCart  className="text-2xl hover:text-rose-700 "/>
             <span className="absolute -top-5 right-2 bg-rose-700 text-white text-sm rounded-full  size-6 grid place-content-center">
             0
             </span>
@@ -105,12 +110,12 @@ import { FaTimes } from "react-icons/fa";
 
 
     {/* menu for cart open from left-side z-index-50*/}
-      <div className={`fixed top-0 left-0 h-full w-80 bg-red-400 ${isCartOpen ? "translate-x-0" :"-translate-x-full"} bg-white shadow-lg transform transition-transform duration-300 z-50`}>
+      <div className={`fixed top-0 left-0 h-full w-80  ${isCartOpen ? "translate-x-0" :"-translate-x-full pointer-events-none"} bg-white shadow-lg transform transition-transform duration-300 z-50`}>
      <div>
        {/* header */}
        <div className="flex justify-between items-center border-b border-b-gray-200 p-10">
         <div>سبد خرید شما</div>
-        <div> <FaTimes onClick={()=>setIsCartOpen(false)} className="text-rose-700 cursor-pointer"/></div>
+        <div> <FaTimes onClick={openMobileMenu} className="text-rose-700 cursor-pointer"/></div>
        </div>
 
        {/* add book here */}
