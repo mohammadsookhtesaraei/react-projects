@@ -1,10 +1,12 @@
 import type { ReactNode } from "react"
 
-type AboutPageProps={};
+import Header from "../../components/Header/Header";
 
- const AboutPage = ({}:AboutPageProps):ReactNode => {
+ const AboutPage = ():ReactNode => {
   return (
-    <div className="">Hello from AboutPage</div>
+    <div className="">
+      <Header/>
+    </div>
   );
 }
 
