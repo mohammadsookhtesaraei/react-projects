@@ -31,6 +31,8 @@ type HomePageProps={};
       <Header/>
       <Hero/>
       <BookSlider books={books} title="داستان کودک و نوجوانان" category="داستان کودک و نوجوانان"/>
+      
+
       <Footer/>
     </div>
   );

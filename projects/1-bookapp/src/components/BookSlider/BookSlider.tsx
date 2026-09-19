@@ -45,7 +45,7 @@ type BookSliderProps={
       >
        {filtredBooks.map((book)=>(
       <SwiperSlide key={book.id}>
-        <Link to="">
+        <Link to={`/book/${book.id}`}>
         <div className="bg-white min-h-67.5 shadow-lg rounded-lg p-5 flex flex-col items-center text-center transition-transform duration-300 hover:shadow-2xl">
           <div className="h-auto mb-6">
             <img className="w-42.5 h-50 block bg-red-300" src={book.image} alt={book.title} />
