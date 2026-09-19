@@ -1,9 +1,7 @@
+import type { Book } from "../types/book-interface";
 
-export type Item = {
-    id: string,
-    title: string,
-    price: string,
-    qty: number
+export type Item  =Book & {
+   qty?:number
 }
 
 type State = {
@@ -38,7 +36,7 @@ export const cartReducer = (state: State, action: CartAction) => {
                     ...state,
                     item: state.item.map((item) => {
                         if (item.id === action.payload.id) {
-                            return { ...item, qty: item.qty + 1 }
+                            return { ...item, qty: (item.qty ?? 0 ) + 1 }
                         } else {
                             return item
                         }
@@ -55,7 +53,7 @@ export const cartReducer = (state: State, action: CartAction) => {
                     ...state,
                     item: state.item.map((item) => {
                         if (item.id === action.payload.id) {
-                            return { ...item, qty: item.qty > 0 ? item.qty - 1 : 0 }
+                            return { ...item, qty: (item.qty ?? 0 ) > 0 ? (item.qty ?? 0 ) - 1 : 0 }
                         } else {
                             return item
                         }
