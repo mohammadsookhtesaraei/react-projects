@@ -6,6 +6,7 @@ import { type ICoin } from "../../types/coins-interface";
 
 import Table from "./components/Table/Table";
 import Pagination from "./components/Pagination/Pagination";
+import SearchBox from "./components/SearchBox/SearchBox";
 
 
  const CoinsList = ():ReactNode => {
@@ -43,8 +44,9 @@ import Pagination from "./components/Pagination/Pagination";
 
 
   return (
-    <div className=" py-16">
-      <Table coins={coins} isLoading={isLoading}/>
+    <div className="">
+      <SearchBox currency={currency} setCurrency={setCurrency}/>
+      <Table coins={coins} currency={currency} isLoading={isLoading}/>
       <Pagination page={page} setPage={setPage}/>
     </div>
   );

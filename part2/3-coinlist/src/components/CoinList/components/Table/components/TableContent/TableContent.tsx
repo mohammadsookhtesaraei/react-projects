@@ -2,11 +2,19 @@ import type { ReactNode } from "react"
 import type { ICoin } from "../../../../../../types/coins-interface";
 
 type TableContentProps={
-   coins: ICoin[];
+    coins: ICoin[];
     isLoading: boolean;
+    currency:string
 };
 
- const TableContent = ({coins,isLoading}:TableContentProps):ReactNode => {
+const currencySymbols: Record<string, string> = {
+  usd: "$",
+  eur: "€",
+  cny: "¥",
+  jpy: "¥",
+};
+
+ const TableContent = ({coins,isLoading,currency}:TableContentProps):ReactNode => {
   return (
      <div className="h-full">
           {!coins.length && isLoading ? (
@@ -27,10 +35,10 @@ type TableContentProps={
                     <span className="text-gray-300 ">{item.symbol}</span>
                   </p>
                   <p className="text-gray-300">
-                    {item.current_price.toLocaleString()}$
+                    {item.current_price.toLocaleString()}{currencySymbols[currency]}
                   </p>
                   <p className="text-gray-300">
-                    {item.market_cap.toLocaleString()}$
+                    {item.market_cap.toLocaleString()}{currencySymbols[currency]}
                   </p>
                   <p
                     className={
