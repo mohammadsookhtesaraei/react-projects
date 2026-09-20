@@ -5,6 +5,7 @@ import Hero from "../../components/Hero/Hero";
 import BookSlider from "../../components/BookSlider/BookSlider";
 import type { Book } from "../../types/book-interface";
 import { getAllBooks } from "../../services/bookService";
+import Banner from "../../components/Banner/Banner";
 
 type HomePageProps={};
 
@@ -30,7 +31,38 @@ type HomePageProps={};
     <div className="">
       <Header/>
       <Hero/>
-      <BookSlider books={books} title="داستان کودک و نوجوانان" category="داستان کودک و نوجوانان"/>
+    <BookSlider
+                title={"داستان کودک و نوجوانان"}
+                category={"داستان کودک و نوجوانان"}
+                books={books}
+            />
+            <BookSlider
+                title="کتاب‌های موفقیت و خودیاری"
+                category="موفقیت و خودیاری"
+                books={books}
+            />
+            <BookSlider
+                title="رمان و داستان خارجی"
+                category="داستان خارجی"
+                books={books}
+            />
+            <BookSlider
+                title="کتاب‌های علمی تخیلی"
+                category="علمی تخیلی"
+                books={books}
+            />
+
+            <Banner/>
+            <BookSlider
+                title="کتاب‌های جنایی"
+                category="جنایی"
+                books={books}
+            />
+            <BookSlider
+                title="کتاب‌های ترسناک"
+                category="وحشت"
+                books={books}
+            />
       
 
       <Footer/>
