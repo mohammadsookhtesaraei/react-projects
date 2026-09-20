@@ -1,13 +1,13 @@
 import type { ReactNode } from "react"
 
-import CoinList from "../../components/CoinList/CoinList";
+import CoinsList from "../../components/CoinList/CoinsList";
 
 type HomePageProps={};
 
  const HomePage = ({}:HomePageProps):ReactNode => {
   return (
     <>
-    <CoinList/>
+    <CoinsList/>
     </>
   );
 }

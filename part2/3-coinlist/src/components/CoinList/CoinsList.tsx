@@ -1,12 +1,18 @@
 import { useEffect, useState, type ReactNode } from "react"
-
-import { getCoins } from "../../services/getCoins";
 import axios from "axios";
 
- const CoinList = ():ReactNode => {
-  const [coins,setCoins]=useState([]);
+import { getCoins } from "../../services/getCoins";
+import { type ICoin } from "../../types/coins-interface";
+
+ const CoinsList = ():ReactNode => {
+
+  // coins state
+  const [coins,setCoins]=useState<ICoin[]>([]);
+// pagination state
   const [page,setPage]=useState(1);
+// loading state
   const [isLoading,setIsLoading]=useState(false);
+// select option state
   const [currency, setCurrency] = useState("usd");
 
   useEffect(()=>{
@@ -32,8 +38,10 @@ import axios from "axios";
   console.log(coins);
 
   return (
-    <div className="">Hello from CoinList</div>
+    <div className="">
+      
+    </div>
   );
 }
 
-export default CoinList;
+export default CoinsList;
