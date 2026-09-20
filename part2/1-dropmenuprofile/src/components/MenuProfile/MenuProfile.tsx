@@ -25,7 +25,7 @@ type MenuProfileProps={};
           <strong className="border-b border-b-gray-400">cr7</strong>
           <small className="text-gray-300">cr7@gmail.com</small>
         </div>
-        <ul className=" [&>li]:bg-blue-400 [&>li]:p-2 [&>li]:border-b [&>li]:border-b-gray-300 ">
+        <ul className=" [&>li]:bg-blue-400 [&>li]:p-2 divide-y divide-sky-200 ">
           <li>my profile</li>
           <li>setting</li>
           <li>log out</li>
