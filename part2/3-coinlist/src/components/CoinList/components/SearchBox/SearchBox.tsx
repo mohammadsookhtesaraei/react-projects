@@ -13,10 +13,12 @@ type SearchBoxProps = {
 const SearchBox = ({ currency, setCurrency }: SearchBoxProps): ReactNode => {
   const [search, setSearch] = useState("");
   const [data, setData] = useState<ICoin[]>([]);
+  const [isLoading, setIsLoading] = useState(false);
 
   useEffect(() => {
     const controller = new AbortController();
     const getData = async () => {
+       setIsLoading(true);
       try {
         const response = await searchCoins(search, controller.signal);
         setData(response.coins);
@@ -30,6 +32,8 @@ const SearchBox = ({ currency, setCurrency }: SearchBoxProps): ReactNode => {
         } else {
           console.log("unknown error");
         }
+      }finally{
+        setIsLoading(false);
       }
     };
 
@@ -48,7 +52,7 @@ const SearchBox = ({ currency, setCurrency }: SearchBoxProps): ReactNode => {
         currency={currency}
         setCurrency={setCurrency}
       />
-      <DataSearch data={data} />
+      <DataSearch data={data} isLoading={isLoading} />
     </div>
   );
 };
