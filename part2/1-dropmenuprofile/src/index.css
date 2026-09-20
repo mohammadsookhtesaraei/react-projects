@@ -6,7 +6,7 @@
 @theme {
    
     /* create animate */
-    --animate-fade-in: fade-in 0.5s ease-out;
+    --animate-fade-in: fade-in 0.5s ease-in-out;
 
     /* create keyframes */
     @keyframes fade-in {
