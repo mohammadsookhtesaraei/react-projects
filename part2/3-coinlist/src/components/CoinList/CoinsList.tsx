@@ -3,6 +3,7 @@ import axios from "axios";
 
 import { getCoins } from "../../services/getCoins";
 import { type ICoin } from "../../types/coins-interface";
+import Table from "../Table/Table";
 
  const CoinsList = ():ReactNode => {
 
@@ -15,6 +16,7 @@ import { type ICoin } from "../../types/coins-interface";
 // select option state
   const [currency, setCurrency] = useState("usd");
 
+  // useEffect and fecth data with updating cycle
   useEffect(()=>{
    const getData=async()=>{
    setIsLoading(true);
@@ -35,11 +37,11 @@ import { type ICoin } from "../../types/coins-interface";
    getData()
   },[page,currency]);
 
-  console.log(coins);
+
 
   return (
-    <div className="">
-      
+    <div className="flex items-start justify-center min-h-screen py-16">
+      <Table coins={coins} isLoading={isLoading}/>
     </div>
   );
 }
