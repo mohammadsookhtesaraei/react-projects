@@ -3,7 +3,10 @@ import axios from "axios";
 
 import { getCoins } from "../../services/getCoins";
 import { type ICoin } from "../../types/coins-interface";
-import Table from "../Table/Table";
+
+import Table from "./components/Table/Table";
+import Pagination from "./components/Pagination/Pagination";
+
 
  const CoinsList = ():ReactNode => {
 
@@ -40,8 +43,9 @@ import Table from "../Table/Table";
 
 
   return (
-    <div className="flex items-start justify-center min-h-screen py-16">
+    <div className=" py-16">
       <Table coins={coins} isLoading={isLoading}/>
+      <Pagination page={page} setPage={setPage}/>
     </div>
   );
 }

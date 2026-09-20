@@ -1,5 +1,5 @@
 import type { ReactNode } from "react"
-import type { ICoin } from "../../../../types/coins-interface";
+import type { ICoin } from "../../../../../../types/coins-interface";
 
 type TableContentProps={
    coins: ICoin[];
@@ -8,9 +8,9 @@ type TableContentProps={
 
  const TableContent = ({coins,isLoading}:TableContentProps):ReactNode => {
   return (
-     <div>
+     <div className="h-full">
           {!coins.length && isLoading ? (
-            <p className="text-white text-center">loading...</p>
+            <p className="text-white  text-lg text-center h-full flex items-center justify-center">loading...</p>
           ) : (
             <ul className="divide-y divide-gray-300 ">
               {coins.map((item) => (
@@ -39,7 +39,7 @@ type TableContentProps={
                         : "text-rose-500"
                     }
                   >
-                    {item.price_change_percentage_24h}%
+                    {Math.floor(item.price_change_percentage_24h)}%
                   </p>
                 </li>
               ))}
