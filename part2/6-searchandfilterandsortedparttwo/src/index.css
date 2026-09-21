@@ -14,7 +14,7 @@
 
 
 .filter-container {
-  @apply max-w-[1000px] mx-auto my-[30px] p-5 text-center;
+  @apply max-w-250 mx-auto my-7.5 p-5 text-center;
 }
 
 .title {
@@ -22,7 +22,7 @@
 }
 
 .dropdown {
-  @apply py-2.5 px-[15px] text-base mb-[30px] rounded-lg border border-[#9b9afd] bg-[#040216] text-white;
+  @apply py-2.5 px-3.75 text-base mb-7.5 rounded-lg border border-[#9b9afd] bg-[#040216] text-white;
 }
 
 .product-list {
@@ -30,19 +30,31 @@
 }
 
 .product-card {
-  @apply w-[220px] rounded-xl shadow-[0_2px_10px_rgba(129,1,1,0.568)] p-3 text-center transition-transform duration-200 ease-in-out bg-white;
+  @apply w-55 rounded-xl shadow-[0_2px_10px_rgba(129,1,1,0.568)] p-3 text-center transition-transform duration-200 ease-in-out bg-white;
 }
 
 .product-card:hover {
-  @apply -translate-y-[5px];
+  @apply -translate-y-1.25;
 }
 
 .product-name {
-  @apply text-lg my-2.5 mt-2.5 mb-[5px] text-[#222];
+  @apply text-lg my-2.5 mt-2.5 mb-1.5 text-[#222];
 }
 
 .product-category {
   @apply text-sm text-[#777];
+}
+
+.search-bar {
+    @apply flex justify-center my-4 gap-2;
+}
+
+.search-input {
+    @apply p-2 border border-[#ccc] rounded-lg text-base text-black [direction:rtl];
+}
+
+.search-button {
+    @apply py-2 px-4 bg-[#960000] text-white border-0 rounded-lg cursor-pointer;
 }
 
 }
