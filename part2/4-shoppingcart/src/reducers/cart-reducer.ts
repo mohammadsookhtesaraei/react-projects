@@ -2,7 +2,7 @@ import { type IBook } from "../types/books-interface"
 
 
 export type TState = IBook & {
-    qty: number
+    qty?: number
 };
 
 type State = {
@@ -25,7 +25,7 @@ export const reducerCart = (state: State, action: CartAction) => {
         case "Add_TO_Cart": {
             const isExist = state.cart.find((item) => item.id === action.payload.id);
             if (!isExist) {
-                return { ...state, cart: [...state.cart,{ ...action.payload, qty: 1 }] }
+                return { ...state, cart: [...state.cart,{...action.payload, qty: 1 }] }
             } else {
                 return state
             }
@@ -56,7 +56,7 @@ export const reducerCart = (state: State, action: CartAction) => {
                     ...state,
                     cart: state.cart.map((item) => {
                         if (item.id === action.payload.id) {
-                            return { ...item, qty: (item.qty ?? 0 ) + 1}
+                            return { ...item, qty: (item.qty ?? 0 ) > 0 ? (item.qty ?? 0 ) - 1 : 0 }
                         } else {
                             return item
                         }
