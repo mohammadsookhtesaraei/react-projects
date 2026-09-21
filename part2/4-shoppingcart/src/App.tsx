@@ -1,10 +1,11 @@
 import Home from "./pages/Home/Home"
+import CartProvider from "./providers/CartProvider"
 
 const App = () => {
   return (
-    <>
-    <Home/>
-    </>
+    <CartProvider>
+     <Home/>
+    </CartProvider>
   )
 }
 export default App

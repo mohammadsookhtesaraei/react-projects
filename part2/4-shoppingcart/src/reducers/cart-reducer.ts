@@ -1,7 +1,7 @@
 import { type IBook } from "../types/books-interface"
 
 
-type TState = IBook & {
+export type TState = IBook & {
     qty: number
 };
 
@@ -9,9 +9,13 @@ type State = {
     cart: TState[]
 };
 
+export const initialState:State={
+cart:[]
+};
 
 
-type CartAction = { type: "Add_TO_Cart", payload: TState } | { type: "Increase", payload: TState } | { type: "Decrease", payload: TState } | { type: "Remove_Item", payload: TState } | { type: "clear" };
+
+export type CartAction = { type: "Add_TO_Cart", payload: TState } | { type: "Increase", payload: TState } | { type: "Decrease", payload: TState } | { type: "Remove_Item", payload: TState } | { type: "clear" };
 
 
 
