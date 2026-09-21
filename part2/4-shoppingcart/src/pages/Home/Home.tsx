@@ -1,10 +1,13 @@
 import type { ReactNode } from "react"
+import Header from "../../Components/Header/Header";
 
 type HomeProps={};
 
  const Home = ({}:HomeProps):ReactNode => {
   return (
-    <div className="">Hello from Home</div>
+    <>
+    <Header/>
+    </>
   );
 }
 
