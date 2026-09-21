@@ -29,7 +29,7 @@ const Products = (): ReactNode => {
 
     getData();
   }, []);
-  return <ProductsList books={books}/>
+  return <ProductsList books={books} loading={isLoading} error={error}/>
 };
 
 export default Products;

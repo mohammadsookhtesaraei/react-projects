@@ -10,13 +10,13 @@ const Header = ({}: HeaderProps): ReactNode => {
   const { cart, disPatchItem } = use(CartContext);
 
   // total price
-  const totalPrice = cart.reduce(
+  const totalPrice = cart?.reduce(
     (total, item) =>
       total + (item.qty ?? 0) * +item.price.split(" ")[0].split(",").join(""),
     0,
   );
   // total qty
-  const totalqty = cart.reduce((total, item) => total + (item.qty ?? 0), 0);
+  const totalqty = cart?.reduce((total, item) => total + (item.qty ?? 0), 0);
 
   // state cart basket
   const [isOpenCart, setIsOpenCart] = useState(false);
@@ -66,7 +66,7 @@ const Header = ({}: HeaderProps): ReactNode => {
               ) : (
                 <>
                   {cart.map((item) => (
-                    <div>
+                    <div key={item.id}>
                       <img
                         className="size-20 object-cover"
                         src={item.image}
