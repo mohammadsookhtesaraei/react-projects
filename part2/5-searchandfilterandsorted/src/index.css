@@ -1,1 +1,33 @@
 @import "tailwindcss";
+
+.filter-container {
+  @apply max-w-[1000px] mx-auto my-[30px] p-5 text-center;
+}
+
+.title {
+  @apply text-2xl mb-5 text-[aliceblue];
+}
+
+.dropdown {
+  @apply py-2.5 px-[15px] text-base mb-[30px] rounded-lg border border-[#9b9afd] bg-[#040216] text-white;
+}
+
+.product-list {
+  @apply flex flex-wrap gap-5 justify-center;
+}
+
+.product-card {
+  @apply w-[220px] rounded-xl shadow-[0_2px_10px_rgba(129,1,1,0.568)] p-3 text-center transition-transform duration-200 ease-in-out bg-white;
+}
+
+.product-card:hover {
+  @apply -translate-y-[5px];
+}
+
+.product-name {
+  @apply text-lg my-2.5 mt-2.5 mb-[5px] text-[#222];
+}
+
+.product-category {
+  @apply text-sm text-[#777];
+}
