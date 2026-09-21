@@ -4,6 +4,9 @@
 
 # pagination 
 
-# search 
+# search  from server
+
+# category from server
 
 # tailwind v4.3
+

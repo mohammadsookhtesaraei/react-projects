@@ -45,7 +45,7 @@ import SearchBox from "./components/SearchBox/SearchBox";
 
   return (
     <div className="">
-      <SearchBox currency={currency} setCurrency={setCurrency}/>
+      <SearchBox setPage={setPage} currency={currency} setCurrency={setCurrency}/>
       <Table coins={coins} currency={currency} isLoading={isLoading}/>
       <Pagination page={page} setPage={setPage}/>
     </div>

@@ -5,6 +5,7 @@ type SerchedProps = {
   setCurrency: React.Dispatch<React.SetStateAction<string>>;
   search: string;
   setSearch: React.Dispatch<React.SetStateAction<string>>;
+  setPage: React.Dispatch<React.SetStateAction<number>>;
 };
 
 const Searched = ({
@@ -12,7 +13,14 @@ const Searched = ({
   setSearch,
   currency,
   setCurrency,
+  setPage,
 }: SerchedProps): ReactNode => {
+  const handleChangeCurrency = (
+    e: React.ChangeEvent<HTMLSelectElement>,
+  ): void => {
+    setCurrency(e.target.value);
+    setPage(1);
+  };
   return (
     <>
       <input
@@ -32,7 +40,7 @@ const Searched = ({
       />
       <select
         value={currency}
-        onChange={(e) => setCurrency(e.target.value)}
+        onChange={handleChangeCurrency}
         className="
     appearance-none
     w-28

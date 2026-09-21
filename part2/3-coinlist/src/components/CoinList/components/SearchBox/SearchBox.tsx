@@ -8,9 +8,10 @@ import DataSearch from "./components/DataSearch/DataSearch";
 type SearchBoxProps = {
   currency: string;
   setCurrency: React.Dispatch<React.SetStateAction<string>>;
+  setPage: React.Dispatch<React.SetStateAction<number>>
 };
 
-const SearchBox = ({ currency, setCurrency }: SearchBoxProps): ReactNode => {
+const SearchBox = ({ currency, setCurrency,setPage }: SearchBoxProps): ReactNode => {
   const [search, setSearch] = useState("");
   const [data, setData] = useState<ICoin[]>([]);
   const [isLoading, setIsLoading] = useState(false);
@@ -51,6 +52,7 @@ const SearchBox = ({ currency, setCurrency }: SearchBoxProps): ReactNode => {
         setSearch={setSearch}
         currency={currency}
         setCurrency={setCurrency}
+        setPage={setPage}
       />
       <DataSearch data={data} isLoading={isLoading} />
     </div>
