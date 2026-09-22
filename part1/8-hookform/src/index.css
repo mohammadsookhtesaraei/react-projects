@@ -1,0 +1,33 @@
+@import "tailwindcss";
+
+
+
+@layer components {
+
+    .form_input {
+    
+        @apply border ps-2 text-blue-400 border-gray-300 w-full py-0.5 rounded-md focus:outline-none focus:shadow-md focus:shadow-gray-200 transition-shadow duration-75
+    
+    }
+
+
+    .btn {
+    
+        @apply px-4 py-0.5 rounded-md hover:scale-105 active:scale-95 duration-150 transition-transform cursor-pointer
+    
+    }
+
+    
+    .btn_primary {
+    
+        @apply bg-blue-400 text-white
+    
+    }
+
+    .btn_outline {
+        @apply bg-gray-200 border border-gray-300 text-gray-400
+    }
+
+
+
+}
