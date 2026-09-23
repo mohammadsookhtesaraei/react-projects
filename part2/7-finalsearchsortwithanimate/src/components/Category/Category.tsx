@@ -122,7 +122,7 @@ const Category = (): ReactNode => {
 
   return (
     // container اصلی صفحه
-    <div className="bg-slate-800 flex flex-col py-30 items-center">
+    <div className="bg-slate-800 flex flex-col py-30 items-center h-screen">
 
       {/* input جستجو */}
       <input

@@ -32,6 +32,17 @@ const Header = (): ReactNode => {
   if(e.key === "Enter"){
        navigate(`/search?q=${searchQuery}`);
   }
+  };
+
+
+  const handleSearchInputOnChange=(e:React.ChangeEvent<HTMLInputElement>):void=>{
+ const value=e.target.value;
+ setSearchQuery(value);
+ if(value.trim()){
+     navigate(`/search?q=${searchQuery}`);
+ }else {
+  navigate(`/search`);
+ }
   }
 
   return (
@@ -53,7 +64,7 @@ const Header = (): ReactNode => {
             placeholder="اسم کتاب رو بنویسید"
             className="w-full p-2 rounded-3xl transition border border-gray-200 focus:outline-none focus:border-rose-400 focus:ring-2 focus:ring-rose-100"
             value={searchQuery}
-            onChange={(e)=>setSearchQuery(e.target.value)}
+            onChange={handleSearchInputOnChange}
             onKeyDown={handleKeyDown}
           />
           <FiSearch className="absolute  -top-0.75 left-3 translate-y-1/2 text-2xl text-rose-400" />

@@ -29,7 +29,6 @@ type HomePageProps={};
 
   return (
     <div className="">
-      <Header/>
       <Hero/>
     <BookSlider
                 title={"داستان کودک و نوجوانان"}
@@ -65,7 +64,7 @@ type HomePageProps={};
             />
       
 
-      <Footer/>
+  
     </div>
   );
 }
