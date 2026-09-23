@@ -1,4 +1,4 @@
-import { useState, type ReactNode } from "react";
+import { use, useState, type ReactNode } from "react";
 import { Link } from "react-router-dom";
 
 import Logo from "../../assets/images/logo.png";
@@ -7,8 +7,13 @@ import { FiSearch } from "react-icons/fi";
 import { FaShoppingCart } from "react-icons/fa";
 import { RxHamburgerMenu } from "react-icons/rx";
 import { FaTimes } from "react-icons/fa";
+import { SearchContext } from "../../context/SearchContext";
+import { useNavigate } from "react-router-dom";
 
 const Header = (): ReactNode => {
+ const navigate=useNavigate();
+  const {searchQuery,setSearchQuery}=use(SearchContext);
+
   const [isCartOpen, setIsCartOpen] = useState(false);
   const [isMobileOpen, setIsMobileOpen] = useState(false);
 
@@ -22,6 +27,12 @@ const Header = (): ReactNode => {
     setIsMobileOpen(false);
     setIsCartOpen(true);
   };
+
+  const handleKeyDown=(e: React.KeyboardEvent<HTMLInputElement>)=>{
+  if(e.key === "Enter"){
+       navigate(`/search?q=${searchQuery}`);
+  }
+  }
 
   return (
     <>
@@ -41,6 +52,9 @@ const Header = (): ReactNode => {
             type="search"
             placeholder="اسم کتاب رو بنویسید"
             className="w-full p-2 rounded-3xl transition border border-gray-200 focus:outline-none focus:border-rose-400 focus:ring-2 focus:ring-rose-100"
+            value={searchQuery}
+            onChange={(e)=>setSearchQuery(e.target.value)}
+            onKeyDown={handleKeyDown}
           />
           <FiSearch className="absolute  -top-0.75 left-3 translate-y-1/2 text-2xl text-rose-400" />
         </div>
