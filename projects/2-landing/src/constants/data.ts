@@ -1,7 +1,7 @@
 import { BookOpen, Code2, Laptop, MessageCircle, Rocket, Shield, Trophy, Users, Zap, type LucideIcon } from "lucide-react";
 
 
-
+// hero data
 export const codeLines:{
     
     indent: number;
@@ -28,6 +28,7 @@ export const codeLines:{
 
 
 
+// features data
 
 type TFeatures = {
     icon: LucideIcon;
@@ -120,6 +121,124 @@ export const featuresData: TFeatures[] = [
         borderColor: "hover:border-emerald-500/40",
     },
 ];
+
+
+// curses data
+
+type TCursesData={
+     title: string;
+    description: string;
+    icon: string;
+    level: string;
+    duration: string;
+    students: string;
+    rating: number;
+    price: string;
+    originalPrice: string;
+    tags: string[];
+    gradient: string;
+    borderColor: string;
+    popular: boolean;
+}
+const coursesData:TCursesData[] = [
+  {
+    title: "React & Next.js Mastery",
+    description:
+      "Build modern web applications with React 18, Next.js 14, Server Components, and the latest patterns.",
+    icon: "⚛️",
+    level: "Intermediate",
+    duration: "12 weeks",
+    students: "8,500+",
+    rating: 4.9,
+    price: "$99",
+    originalPrice: "$199",
+    tags: ["React", "Next.js", "TypeScript"],
+    gradient: "from-blue-500/20 to-cyan-500/20",
+    borderColor: "hover:border-blue-500/40",
+    popular: true,
+  },
+  {
+    title: "Full-Stack JavaScript",
+    description:
+      "Master both frontend and backend development with Node.js, Express, MongoDB, and React.",
+    icon: "🚀",
+    level: "Beginner",
+    duration: "16 weeks",
+    students: "12,300+",
+    rating: 4.8,
+    price: "$129",
+    originalPrice: "$249",
+    tags: ["Node.js", "Express", "MongoDB"],
+    gradient: "from-green-500/20 to-emerald-500/20",
+    borderColor: "hover:border-green-500/40",
+    popular: false,
+  },
+  {
+    title: "TypeScript Deep Dive",
+    description:
+      "Go from TypeScript beginner to expert. Learn advanced types, generics, and enterprise patterns.",
+    icon: "📘",
+    level: "Intermediate",
+    duration: "8 weeks",
+    students: "5,200+",
+    rating: 4.9,
+    price: "$79",
+    originalPrice: "$159",
+    tags: ["TypeScript", "Generics", "Patterns"],
+    gradient: "from-blue-600/20 to-indigo-500/20",
+    borderColor: "hover:border-indigo-500/40",
+    popular: false,
+  },
+  {
+    title: "Python & AI Fundamentals",
+    description:
+      "Learn Python programming and dive into machine learning, data science, and AI with hands-on projects.",
+    icon: "🐍",
+    level: "Beginner",
+    duration: "14 weeks",
+    students: "15,800+",
+    rating: 4.7,
+    price: "$109",
+    originalPrice: "$219",
+    tags: ["Python", "ML", "Data Science"],
+    gradient: "from-yellow-500/20 to-orange-500/20",
+    borderColor: "hover:border-yellow-500/40",
+    popular: false,
+  },
+  {
+    title: "DevOps & Cloud Engineering",
+    description:
+      "Master Docker, Kubernetes, AWS, CI/CD pipelines, and infrastructure as code for modern deployment.",
+    icon: "☁️",
+    level: "Advanced",
+    duration: "10 weeks",
+    students: "3,900+",
+    rating: 4.8,
+    price: "$149",
+    originalPrice: "$299",
+    tags: ["Docker", "AWS", "Kubernetes"],
+    gradient: "from-purple-500/20 to-pink-500/20",
+    borderColor: "hover:border-purple-500/40",
+    popular: false,
+  },
+  {
+    title: "UI/UX Design for Developers",
+    description:
+      "Learn design thinking, Figma, user research, and create beautiful interfaces as a developer.",
+    icon: "🎨",
+    level: "Beginner",
+    duration: "6 weeks",
+    students: "6,700+",
+    rating: 4.9,
+    price: "$69",
+    originalPrice: "$139",
+    tags: ["Figma", "Design", "UX"],
+    gradient: "from-pink-500/20 to-rose-500/20",
+    borderColor: "hover:border-pink-500/40",
+    popular: false,
+  },
+];
+
 
 
 
