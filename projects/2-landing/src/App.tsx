@@ -3,6 +3,7 @@ import Hero from "./components/Hero/Hero";
 import Features from "./components/Features/Features";
 import Courses from "./components/Courses/Courses";
 import Stats from "./components/Stats/Stats";
+import Testimonials from "./components/Testimonials/Testimonials";
 
 const App = () => {
   return (
@@ -21,6 +22,9 @@ const App = () => {
 
         {/* stats -section */}
         <Stats/>
+
+        {/* testimonials section */}
+        <Testimonials/>
 
       </main>
     </div>
