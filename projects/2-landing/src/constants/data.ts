@@ -240,5 +240,59 @@ export const coursesData:TCursesData[] = [
 ];
 
 
+// stats data
+import { GraduationCap, Award, Globe } from "lucide-react";
+
+type  TStas={
+    icon: LucideIcon;
+    value: number;
+    suffix: string;
+    label: string;
+    description: string;
+    color: string;
+    bg: string;
+};
+
+
+export const statsData:TStas[] = [
+  {
+    icon: GraduationCap,
+    value: 50000,
+    suffix: "+",
+    label: "Students Enrolled",
+    description: "Active learners worldwide",
+    color: "text-primary-light",
+    bg: "bg-primary/10",
+  },
+  {
+    icon: BookOpen,
+    value: 200,
+    suffix: "+",
+    label: "Expert Courses",
+    description: "Across 15+ technologies",
+    color: "text-accent-cyan",
+    bg: "bg-accent-cyan/10",
+  },
+  {
+    icon: Award,
+    value: 95,
+    suffix: "%",
+    label: "Completion Rate",
+    description: "Industry-leading engagement",
+    color: "text-accent-green",
+    bg: "bg-accent-green/10",
+  },
+  {
+    icon: Globe,
+    value: 120,
+    suffix: "+",
+    label: "Countries Reached",
+    description: "Global learning community",
+    color: "text-accent-orange",
+    bg: "bg-accent-orange/10",
+  },
+];
+
+
 
 

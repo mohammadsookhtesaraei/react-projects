@@ -26,17 +26,22 @@ function StarRating({ rating }: { rating: number }) {
 const Courses = () => {
   return (
     <section id="courses" className="relative py-24 lg:py-32">
+      {/* background */}
       <div className="absolute inset-0 bg-grid-pattern opacity-50" />
-
+      
+      {/* container */}
       <div className="relative max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+
+        {/* heading */}
         <SectionHeading
           badge="Popular Courses"
           title="Learn In-Demand"
           highlightedTitle="Skills"
           description="Industry-aligned courses designed by experts to help you build real-world skills and advance your career."
         />
-
+          {/*cards  */}
         <div className="grid sm:grid-cols-2 lg:grid-cols-3 gap-6">
+          {/* map-data for each card */}
           {coursesData.map((course, i) => (
             <motion.div
               key={course.title}
