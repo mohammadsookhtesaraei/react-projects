@@ -5,7 +5,8 @@ import Courses from "./components/Courses/Courses";
 import Stats from "./components/Stats/Stats";
 import Testimonials from "./components/Testimonials/Testimonials";
 import Pricing from "./components/Pricing/Pricing";
-import CTA from "./components/Cta/Cta";
+import CTA from "./components/Cta/CTA";
+import Footer from "./components/Footer/Footer";
 
 const App = () => {
   return (
@@ -36,6 +37,7 @@ const App = () => {
         <CTA/>
 
       </main>
+      <Footer/>
     </div>
   );
 };
