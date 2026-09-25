@@ -5,6 +5,7 @@ import Courses from "./components/Courses/Courses";
 import Stats from "./components/Stats/Stats";
 import Testimonials from "./components/Testimonials/Testimonials";
 import Pricing from "./components/Pricing/Pricing";
+import CTA from "./components/Cta/Cta";
 
 const App = () => {
   return (
@@ -29,6 +30,10 @@ const App = () => {
 
         {/* pricing -section */}
         <Pricing/>
+
+        {/* cta */}
+
+        <CTA/>
 
       </main>
     </div>
