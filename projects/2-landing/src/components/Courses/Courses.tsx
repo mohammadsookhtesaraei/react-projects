@@ -23,7 +23,7 @@ function StarRating({ rating }: { rating: number }) {
 
 
 
-const Courses = () => {
+const Courses = ():ReactNode => {
   return (
     <section id="courses" className="relative py-24 lg:py-32">
       {/* background */}

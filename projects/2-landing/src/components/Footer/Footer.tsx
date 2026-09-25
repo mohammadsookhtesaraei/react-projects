@@ -44,7 +44,7 @@ const socialLinks = [
 ];
 
 
-const Footer = () => {
+const Footer = ():ReactNode => {
   return (
     <footer className="relative border-t border-surface-border bg-dark-800">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
