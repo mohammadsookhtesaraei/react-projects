@@ -2,6 +2,7 @@ import Navbar from "./components/Navbar/Navbar";
 import Hero from "./components/Hero/Hero";
 import Features from "./components/Features/Features";
 import Courses from "./components/Courses/Courses";
+import Stats from "./components/Stats/Stats";
 
 const App = () => {
   return (
@@ -15,8 +16,12 @@ const App = () => {
         {/* features -section */}
         <Features />
 
-        {/* curses-data */}
+        {/* courses-section*/}
         <Courses/>
+
+        {/* stats -section */}
+        <Stats/>
+
       </main>
     </div>
   );
