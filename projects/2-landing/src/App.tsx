@@ -4,6 +4,7 @@ import Features from "./components/Features/Features";
 import Courses from "./components/Courses/Courses";
 import Stats from "./components/Stats/Stats";
 import Testimonials from "./components/Testimonials/Testimonials";
+import Pricing from "./components/Pricing/Pricing";
 
 const App = () => {
   return (
@@ -25,6 +26,9 @@ const App = () => {
 
         {/* testimonials section */}
         <Testimonials/>
+
+        {/* pricing -section */}
+        <Pricing/>
 
       </main>
     </div>

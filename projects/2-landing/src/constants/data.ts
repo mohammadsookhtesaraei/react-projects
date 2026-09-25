@@ -361,6 +361,96 @@ export const testimonialsData:TTestimonials[] = [
   },
 ];
 
+// pricing data
+
+type TPlan={
+    name: string;
+    description: string;
+    price: string;
+    period: string;
+    popular: boolean;
+    features: {
+        name: string;
+        included: boolean;
+    }[];
+    buttonVariant: "outline";
+    buttonText: string;
+} | {
+    name: string;
+    description: string;
+    price: string;
+    period: string;
+    popular: boolean;
+    features: {
+        name: string;
+        included: boolean;
+    }[];
+    buttonVariant: "primary";
+    buttonText: string;
+};
+
+
+export const plansData:TPlan[] = [
+  {
+    name: "Basic",
+    description: "Perfect for beginners starting their coding journey",
+    price: "$19",
+    period: "/month",
+    popular: false,
+    features: [
+      { name: "Access to 50+ courses", included: true },
+      { name: "Basic coding exercises", included: true },
+      { name: "Community forum access", included: true },
+      { name: "Mobile app access", included: true },
+      { name: "Course certificates", included: false },
+      { name: "AI code reviews", included: false },
+      { name: "1-on-1 mentoring", included: false },
+      { name: "Career support", included: false },
+    ],
+    buttonVariant: "outline" as const,
+    buttonText: "Get Started",
+  },
+  {
+    name: "Pro",
+    description: "Most popular plan for serious developers",
+    price: "$49",
+    period: "/month",
+    popular: true,
+    features: [
+      { name: "Access to all 200+ courses", included: true },
+      { name: "Advanced coding labs", included: true },
+      { name: "Priority community support", included: true },
+      { name: "Mobile app access", included: true },
+      { name: "Verified certificates", included: true },
+      { name: "AI-powered code reviews", included: true },
+      { name: "1-on-1 mentoring (2x/month)", included: true },
+      { name: "Career support", included: false },
+    ],
+    buttonVariant: "primary" as const,
+    buttonText: "Start Pro Plan",
+  },
+  {
+    name: "Enterprise",
+    description: "For teams and organizations seeking growth",
+    price: "$99",
+    period: "/month",
+    popular: false,
+    features: [
+      { name: "Everything in Pro", included: true },
+      { name: "Team management dashboard", included: true },
+      { name: "Custom learning paths", included: true },
+      { name: "SSO & advanced security", included: true },
+      { name: "Unlimited certificates", included: true },
+      { name: "Unlimited AI code reviews", included: true },
+      { name: "Unlimited 1-on-1 mentoring", included: true },
+      { name: "Dedicated career coaching", included: true },
+    ],
+    buttonVariant: "outline" as const,
+    buttonText: "Contact Sales",
+  },
+];
+
+
 
 
 

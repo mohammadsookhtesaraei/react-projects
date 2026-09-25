@@ -5,22 +5,27 @@ import { Star, Quote } from "lucide-react";
 
 
 import { testimonialsData } from "../../constants/data";
+
 import SectionHeading from "../ui/SectionHeading/SectionHeading";
 
 
 const Testimonials = ():ReactNode => {
   return (
     <section id="testimonials" className="relative py-24 lg:py-32">
+      {/* bacground */}
       <div className="absolute inset-0 bg-linear-to-b from-dark-900 via-dark-800 to-dark-900" />
-
+      
+      {/* container */}
       <div className="relative max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        {/* heading */}
         <SectionHeading
           badge="Student Reviews"
           title="Loved by Developers"
           highlightedTitle="Worldwide"
           description="Join thousands of successful graduates who transformed their careers with CodeMaster Academy."
         />
-
+         
+         {/* cards */}
         <div className="grid sm:grid-cols-2 lg:grid-cols-3 gap-6">
           {testimonialsData.map((t, i) => (
             <motion.div
