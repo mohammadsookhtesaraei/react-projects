@@ -56,16 +56,16 @@ const navLinks:{ name: string;
         </a>
 
         {/* desktop navigation */}
-        <div className="hidden md:flex items-center gap-1">
+        <div className="hidden md:flex items-center gap-2">
           {navLinks.map((link)=>(
-            <a className="px-3 py-2 text-sm font-medium text-text-secondary hover:text-text-primary transition-colors duration-200 rounded-lg hover:bg-surface-light/30" key={link.name} href={link.href} onClick={(e)=>handleNavClick(e,link.href)}>{link.name}</a>
+            <a className="text-sm font-medium text-text-secondary hover:text-text-primary transition-colors duration-200 rounded-lg hover:bg-surface-light/30" key={link.name} href={link.href} onClick={(e)=>handleNavClick(e,link.href)}>{link.name}</a>
           ))}
         </div>
      
      {/* dekstop  CTA */}
        {/* Desktop CTA */}
             <div className="hidden md:flex items-center gap-3 ">
-              <Button variant="ghost" size="sm">
+              <Button variant="primary" size="sm">
                 Log In
               </Button>
               <Button variant="primary" size="sm">
