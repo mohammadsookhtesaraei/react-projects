@@ -10,21 +10,7 @@ import {
 } from "lucide-react";
 import Button from "../ui/Button";
 
-const codeLines = [
-  { indent: 0, text: "const", keyword: true, rest: " developer = {" },
-  { indent: 1, text: "name:", keyword: false, value: "'You'" },
-  {
-    indent: 1,
-    text: "skills:",
-    keyword: false,
-    value: "['React', 'Node.js', 'TypeScript']",
-  },
-  { indent: 1, text: "level:", keyword: false, value: "'Expert'" },
-  { indent: 1, text: "ready:", keyword: false, value: "true" },
-  { indent: 0, text: "};", keyword: false, rest: "" },
-  { indent: 0, text: "", keyword: false, rest: "" },
-  { indent: 0, text: "developer", keyword: false, rest: ".startJourney();" },
-];
+import { codeLines } from "../../constants/data";
 
 const Hero = (): ReactNode => {
   return (
