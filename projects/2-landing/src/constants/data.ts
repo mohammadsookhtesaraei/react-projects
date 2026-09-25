@@ -295,4 +295,72 @@ export const statsData:TStas[] = [
 
 
 
+// testomonial data
+type TTestimonials={
+    name: string;
+    role: string;
+    avatar: string;
+    avatarBg: string;
+    quote: string;
+    rating: number;
+}
+export const testimonialsData:TTestimonials[] = [
+  {
+    name: "Sarah Chen",
+    role: "Frontend Developer at Google",
+    avatar: "SC",
+    avatarBg: "from-violet-500 to-purple-600",
+    quote:
+      "CodeMaster Academy transformed my career. I went from knowing basic HTML to landing a job at Google in just 8 months. The curriculum is incredible and the instructors are world-class.",
+    rating: 5,
+  },
+  {
+    name: "Marcus Johnson",
+    role: "Full-Stack Engineer at Stripe",
+    avatar: "MJ",
+    avatarBg: "from-cyan-500 to-blue-600",
+    quote:
+      "The hands-on projects and real-world focus set CodeMaster apart from every other platform I've tried. The community support is amazing — I never felt stuck.",
+    rating: 5,
+  },
+  {
+    name: "Emily Rodriguez",
+    role: "Software Engineer at Netflix",
+    avatar: "ER",
+    avatarBg: "from-pink-500 to-rose-600",
+    quote:
+      "I tried multiple online platforms before finding CodeMaster. The structured learning paths and AI-powered feedback made all the difference. Worth every penny!",
+    rating: 5,
+  },
+  {
+    name: "Alex Kim",
+    role: "DevOps Lead at Amazon",
+    avatar: "AK",
+    avatarBg: "from-green-500 to-emerald-600",
+    quote:
+      "The DevOps and Cloud Engineering course was exactly what I needed to level up. Within 3 months, I got promoted to a lead role. Highly recommended!",
+    rating: 5,
+  },
+  {
+    name: "Priya Patel",
+    role: "React Developer at Shopify",
+    avatar: "PP",
+    avatarBg: "from-amber-500 to-orange-600",
+    quote:
+      "The React & Next.js Mastery course is by far the best React course I've ever taken. The projects are genuinely challenging and prepared me for real work.",
+    rating: 5,
+  },
+  {
+    name: "David Thompson",
+    role: "Tech Lead at Microsoft",
+    avatar: "DT",
+    avatarBg: "from-blue-500 to-indigo-600",
+    quote:
+      "As someone who's been coding for years, I was impressed by the depth of the TypeScript Deep Dive course. It filled gaps I didn't even know I had.",
+    rating: 5,
+  },
+];
+
+
+
 
