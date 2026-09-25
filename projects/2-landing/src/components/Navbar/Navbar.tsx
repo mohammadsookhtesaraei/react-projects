@@ -87,7 +87,7 @@ const Navbar = (): ReactNode => {
             {/* dekstop  CTA */}
             {/* Desktop CTA */}
             <div className="hidden md:flex items-center gap-3 ">
-              <Button variant="primary" size="sm">
+              <Button variant="ghost" size="sm">
                 Log In
               </Button>
               <Button variant="primary" size="sm">

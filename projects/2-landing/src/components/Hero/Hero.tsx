@@ -14,7 +14,10 @@ import { codeLines } from "../../constants/data";
 
 const Hero = (): ReactNode => {
   return (
-    <section>
+    <section
+       id="home"
+      className="relative min-h-screen flex items-center pt-20 overflow-hidden"
+    >
       {/* Background Effects */}
       <div className="absolute inset-0 bg-grid-pattern" />
       <div className="absolute top-1/4 -left-32 w-96 h-96 bg-primary/20 rounded-full blur-[128px] animate-pulse-glow" />
