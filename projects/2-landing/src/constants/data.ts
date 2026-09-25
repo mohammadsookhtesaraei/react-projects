@@ -451,6 +451,57 @@ export const plansData:TPlan[] = [
 ];
 
 
+// footer data
+type TFooter={
+ Product: {
+ name: string;
+ href: string;
+ }[];
+ Company: {
+ name: string;
+ href: string;
+ }[];
+ Resources: {
+ name: string;
+ href: string;
+ }[];
+ Legal: {
+ name: string;
+ href: string;
+ }[];
+}
+export const footerLinksData:TFooter = {
+  Product: [
+    { name: "Courses", href: "#courses" },
+    { name: "Pricing", href: "#pricing" },
+    { name: "Features", href: "#features" },
+    { name: "Roadmaps", href: "#" },
+    { name: "Pro Plan", href: "#pricing" },
+  ],
+  Company: [
+    { name: "About Us", href: "#" },
+    { name: "Careers", href: "#" },
+    { name: "Blog", href: "#" },
+    { name: "Press", href: "#" },
+    { name: "Partners", href: "#" },
+  ],
+  Resources: [
+    { name: "Documentation", href: "#" },
+    { name: "Community", href: "#" },
+    { name: "Help Center", href: "#" },
+    { name: "Tutorials", href: "#" },
+    { name: "API Reference", href: "#" },
+  ],
+  Legal: [
+    { name: "Privacy Policy", href: "#" },
+    { name: "Terms of Service", href: "#" },
+    { name: "Cookie Policy", href: "#" },
+    { name: "GDPR", href: "#" },
+  ],
+};
+
+
+
 
 
 
