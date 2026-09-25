@@ -140,7 +140,7 @@ type TCursesData={
     borderColor: string;
     popular: boolean;
 }
-const coursesData:TCursesData[] = [
+export const coursesData:TCursesData[] = [
   {
     title: "React & Next.js Mastery",
     description:
