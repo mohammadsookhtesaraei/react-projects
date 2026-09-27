@@ -70,7 +70,6 @@ type DetailsBookProps={};
   }
   return (
     <>
-      <Header/>
       <div className="max-w-5xl mx-auto">
         {/* details book */}
        <AnimatePresence mode="wait">

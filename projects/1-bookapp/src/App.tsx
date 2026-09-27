@@ -1,29 +1,35 @@
+import { lazy, Suspense } from "react";
 import { Route, Routes } from "react-router-dom";
 
-import HomePage from "./pages/HomePage/HomePage";
-import AboutPage from "./pages/AboutPage/AboutPage";
-import Contact from "./pages/Contact/Contact";
-import NotfoundPage from "./pages/NotfoundPage/NotfoundPage";
-
-import DetailsBook from "./pages/DetailsBook/DetailsBook";
-import Search from "./pages/Search/Search";
-import Footer from "./components/Footer/Footer";
 import Header from "./components/Header/Header";
+import Footer from "./components/Footer/Footer";
+
+const HomePage = lazy(() => import("./pages/HomePage/HomePage"));
+const AboutPage = lazy(() => import("./pages/AboutPage/AboutPage"));
+const Contact = lazy(() => import("./pages/Contact/Contact"));
+const DetailsBook = lazy(() => import("./pages/DetailsBook/DetailsBook"));
+const Search = lazy(() => import("./pages/Search/Search"));
+const NotfoundPage = lazy(() => import("./pages/NotfoundPage/NotfoundPage"));
 
 const App = () => {
   return (
     <>
       <Header />
-      <Routes>
-        <Route index element={<HomePage />} />
-        <Route path="/about" element={<AboutPage />} />
-        <Route path="/contact" element={<Contact />} />
-        <Route path="/book/:id" element={<DetailsBook />} />
-        <Route path="/search" element={<Search />} />
-        <Route path="*" element={<NotfoundPage />} />
-      </Routes>
+
+      <Suspense fallback={<div>Loading...</div>}>
+        <Routes>
+          <Route index element={<HomePage />} />
+          <Route path="/about" element={<AboutPage />} />
+          <Route path="/contact" element={<Contact />} />
+          <Route path="/book/:id" element={<DetailsBook />} />
+          <Route path="/search" element={<Search />} />
+          <Route path="*" element={<NotfoundPage />} />
+        </Routes>
+      </Suspense>
+
       <Footer />
     </>
   );
 };
+
 export default App;

@@ -7,7 +7,7 @@ type ThemeProviderProps = {
 };
 
 // تایپ استیت تم که میدیم به کاستوم هوک لوکال استوریج  چون جنریک کاستوم هوک
-type Theme = "light" | "dark";
+type Theme = "light" | "dark" | "system";
 
 // تایپ کانتکس
 type ThemeContextType = {
@@ -21,7 +21,7 @@ const ThemeContext = createContext<ThemeContextType | null>(null);
 // کامپونت کامپوزیشن پرووایدر یا همون رپر
 const ThemeProvider = ({ children }: ThemeProviderProps) => {
     // استیت
-  const [theme, setTheme] = useLocalStorage<Theme>("theme", "light");
+  const [theme, setTheme] = useLocalStorage<Theme>("theme", "system");
 
 //   هندلر
   const handleToggleTheme = (): void => {
@@ -31,7 +31,9 @@ const ThemeProvider = ({ children }: ThemeProviderProps) => {
 //   یوز افکت هر وقت تم تغییر کرد به تگ اچ تی ام ال به کلاسش دارک یا لایت اضافه کنه
   useEffect(() => {
     document.documentElement.classList.remove("light", "dark");
-    document.documentElement.classList.add(theme);
+   if(theme !== "system"){
+      document.documentElement.classList.add(theme);
+   }
   }, [theme]);
 
   return (
